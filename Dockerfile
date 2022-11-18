@@ -40,7 +40,7 @@ RUN echo $(minr -v)
 
 WORKDIR /scanoss/engine/
 
-RUN git clone https://github.com/scanoss/engine.git && \
+RUN git clone -b master_v4 https://github.com/scanoss/engine.git && \
     cd engine && \
     make && \
     make install
