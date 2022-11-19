@@ -63,7 +63,7 @@ RUN git clone https://github.com/scanoss/API.git && \
     
 RUN useradd -ms /bin/bash scanoss \
     && chown scanoss:scanoss /usr/bin/ldb /usr/bin/minr /usr/bin/mz /usr/bin/scanoss /usr/bin/scanoss-api /usr/bin/scanoss-api.sh \
-     /usr/lib/libldb.so/usr/lib/libwayuu.so
+     /usr/lib/libldb.so /usr/lib/libwayuu.so
 
 USER scanoss
 
