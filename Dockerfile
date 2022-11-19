@@ -19,10 +19,6 @@ RUN \
       wget \
   && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -ms /bin/bash scanoss
-
-USER scanoss
-
 WORKDIR /scanoss/
 
 RUN git clone https://github.com/scanoss/ldb.git && \
@@ -64,5 +60,11 @@ RUN git clone https://github.com/scanoss/API.git && \
     cd API && \
     make && \
     make install
+    
+RUN useradd -ms /bin/bash scanoss \
+    && chown scanoss:scanoss /usr/bin/{ldb,minr,mz,scanoss,scanoss-api,scanoss-api.sh \
+    && chown scanoss:scanoss /usr/lib/{libldb.so,libwayuu.so}
+
+USER scanoss
 
 ENTRYPOINT ["/usr/bin/scanoss-api", "-d", "-f", "-b", "0.0.0.0"]
