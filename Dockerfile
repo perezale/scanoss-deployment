@@ -19,6 +19,10 @@ RUN \
       wget \
   && rm -rf /var/lib/apt/lists/*
 
+RUN useradd -ms /bin/bash scanoss
+
+USER scanoss
+
 WORKDIR /scanoss/
 
 RUN git clone https://github.com/scanoss/ldb.git && \
