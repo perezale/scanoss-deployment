@@ -62,8 +62,8 @@ RUN git clone https://github.com/scanoss/API.git && \
     make install
     
 RUN useradd -ms /bin/bash scanoss \
-    && chown scanoss:scanoss /usr/bin/{ldb,minr,mz,scanoss,scanoss-api,scanoss-api.sh \
-    && chown scanoss:scanoss /usr/lib/{libldb.so,libwayuu.so}
+    && chown scanoss:scanoss /usr/bin/ldb /usr/bin/minr /usr/bin/mz /usr/bin/scanoss /usr/bin/scanoss-api /usr/bin/scanoss-api.sh \
+     /usr/lib/libldb.so/usr/lib/libwayuu.so
 
 USER scanoss
 
