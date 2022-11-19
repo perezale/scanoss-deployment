@@ -66,7 +66,8 @@ RUN touch /var/log/scanoss-api.log
 RUN useradd -ms /bin/bash scanoss \
     && chown scanoss:scanoss /usr/bin/ldb /usr/bin/minr /usr/bin/mz /usr/bin/scanoss /usr/bin/scanoss-api /usr/bin/scanoss-api.sh \
      /usr/lib/libldb.so /usr/lib/libwayuu.so \
-     /var/log/scanoss-api.log
+     /var/log/scanoss-api.log \
+     /scanoss/
 
 USER scanoss
 
