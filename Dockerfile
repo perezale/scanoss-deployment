@@ -21,7 +21,7 @@ RUN \
 
 WORKDIR /scanoss/
 
-RUN git clone https://github.com/scanoss/ldb.git && \
+RUN git clone -b readonly https://github.com/perezale/ldb.git && \
     cd ldb && \
     make && \
     make install && \
